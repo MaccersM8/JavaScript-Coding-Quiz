@@ -169,29 +169,41 @@ function DisplayQuestionOne() {
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "0" Is Selected
     Q1B1.addEventListener("click", function() {
+        // Calling Correct Answer Function
         CorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Two Function
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "0" Is Selected
     Q1B2.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Two Function
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "0" Is Selected
     Q1B3.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Two Function
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "0" Is Selected
     Q1B4.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Two Function
         DisplayQuestionTwo();
     })
 }
@@ -218,27 +230,55 @@ function DisplayQuestionTwo() {
     Q2B3.innerText = QuizQuestions[1].Choices.Choice_C;
     QuestionChoices.appendChild(Q2B3);
 
-
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "1" Is Selected
     Q2B1.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
         DisplayQuestionThree();
-        
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "1" Is Selected
     Q2B2.addEventListener("click", function() {
+        // Calling Correct Answer Function
         CorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
+        DisplayQuestionThree();
+    });
+
+    // Creating A Event Listener And Subsequent Function When Choice A Of Question "1" Is Selected
+    Q2B1.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
+        IncorrectAnswer();
+        // Removing Content Of Question Title
+        QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
+        DisplayQuestionThree();
+        
+    });
+
+    // Creating A Event Listener And Subsequent Function When Choice A Of Question "1" Is Selected
+    Q2B2.addEventListener("click", function() {
+        // Calling Correct Answer Function
+        CorrectAnswer();
+        // Removing Content Of Question Title
+        QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
         DisplayQuestionThree();
         
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "1" Is Selected
     Q2B3.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
         DisplayQuestionThree();
 
     });
@@ -248,7 +288,7 @@ function DisplayQuestionTwo() {
 function DisplayQuestionThree() {
     // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
     QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Third Question Title In The Quiz Questions Object
+    // Making The "#Question-Title" ID Have The Same Value As The Second Question Title In The Quiz Questions Object
     QuestionTitle.textContent = QuizQuestions[2].Question_Title;
 
     // Creating And Appending A Button For Choice A Of Question "2" In Quiz Questions Object
@@ -268,22 +308,31 @@ function DisplayQuestionThree() {
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "2" Is Selected
     Q3B1.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Four Function
         DisplayQuestionFour();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "2" Is Selected
     Q3B2.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Four Function
         DisplayQuestionFour();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "2" Is Selected
     Q3B3.addEventListener("click", function() {
+        // Calling Correct Answer Function
         CorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Four Function
         DisplayQuestionFour();
     });
 }
@@ -292,7 +341,7 @@ function DisplayQuestionThree() {
 function DisplayQuestionFour() {
     // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
     QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Fourth Question Title In The Quiz Questions Object
+    // Making The "#Question-Title" ID Have The Same Value As The Second Question Title In The Quiz Questions Object
     QuestionTitle.textContent = QuizQuestions[3].Question_Title;
 
     // Creating And Appending A Button For Choice A Of Question "3" In Quiz Questions Object
@@ -317,29 +366,41 @@ function DisplayQuestionFour() {
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "3" Is Selected
     Q4B1.addEventListener("click", function() {
+        // Calling Correct Answer Function
         CorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Five Function
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "3" Is Selected
     Q4B2.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Five Function
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "3" Is Selected
     Q4B3.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Five Function
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "3" Is Selected
     Q4B4.addEventListener("click", function() {
+        // Calling Incorrect Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Five Function
         DisplayQuestionFive();
     });
 }
@@ -348,7 +409,7 @@ function DisplayQuestionFour() {
 function DisplayQuestionFive() {
     // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
     QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Fifth Question Title In The Quiz Questions Object
+    // Making The "#Question-Title" ID Have The Same Value As The Second Question Title In The Quiz Questions Object
     QuestionTitle.textContent = QuizQuestions[4].Question_Title;
 
     // Creating And Appending A Button For Choice A Of Question "4" In Quiz Questions Object
@@ -373,29 +434,41 @@ function DisplayQuestionFive() {
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "4" Is Selected
     Q5B1.addEventListener("click", function() {
+        // Calling Correct Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Six Function
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "4" Is Selected
     Q5B2.addEventListener("click", function() {
+        // Calling Correct Answer Function
         CorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Six Function
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "4" Is Selected
     Q5B3.addEventListener("click", function() {
+        // Calling Correct Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Six Function
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "4" Is Selected
     Q5B4.addEventListener("click", function() {
+        // Calling Correct Answer Function
         IncorrectAnswer();
+        // Removing Content Of Question Title
         QuestionTitle.textContent = " ";
+        // Calling Display Question Three Function
         DisplayQuestionSix();
     });
 }
@@ -407,229 +480,7 @@ function DisplayQuestionSix() {
     // Making The "#Question-Title" ID Have The Same Value As The Sixth Question Title In The Quiz Questions Object
     QuestionTitle.textContent = QuizQuestions[5].Question_Title;
 
-    // Creating And Appending A Button For Choice A Of Question "5" In Quiz Questions Object
-    var Q6B1 = document.createElement('button');
-    Q6B1.innerText = QuizQuestions[5].Choices.Choice_A;
-    QuestionChoices.appendChild(Q6B1);
-
-    // Creating And Appending A Button For Choice B Of Question "5" In Quiz Questions Object
-    var Q6B2 = document.createElement('button');
-    Q6B2.innerText = QuizQuestions[5].Choices.Choice_B;
-    QuestionChoices.appendChild(Q6B2);
-
-    // Creating And Appending A Button For Choice C Of Question "5" In Quiz Questions Object
-    var Q6B3 = document.createElement('button');
-    Q6B3.innerText = QuizQuestions[5].Choices.Choice_C;
-    QuestionChoices.appendChild(Q6B3);
-
-    // Creating A Event Listener And Subsequent Function When Choice A Of Question "5" Is Selected
-    Q6B1.addEventListener("click", function() {
-        CorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionSeven();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice B Of Question "5" Is Selected
-    Q6B2.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionSeven();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice C Of Question "5" Is Selected
-    Q6B3.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionSeven();
-    });
-}
-
-// Creating A Function Which Displays The Seventh Question In The Quiz
-function DisplayQuestionSeven() {
-    // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
-    QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Seventh Question Title In The Quiz Questions Object
-    QuestionTitle.textContent = QuizQuestions[6].Question_Title;
-
-    // Creating And Appending A Button For Choice A Of Question "6" In Quiz Questions Object
-    var Q7B1 = document.createElement('button');
-    Q7B1.innerText = QuizQuestions[6].Choices.Choice_A;
-    QuestionChoices.appendChild(Q7B1);
-
-    // Creating And Appending A Button For Choice B Of Question "6" In Quiz Questions Object
-    var Q7B2 = document.createElement('button');
-    Q7B2.innerText = QuizQuestions[6].Choices.Choice_B;
-    QuestionChoices.appendChild(Q7B2);
-
-    // Creating And Appending A Button For Choice C Of Question "6" In Quiz Questions Object
-    var Q7B3 = document.createElement('button');
-    Q7B3.innerText = QuizQuestions[6].Choices.Choice_C;
-    QuestionChoices.appendChild(Q7B3);
-
-    // Creating And Appending A Button For Choice D Of Question "6" In Quiz Questions Object
-    var Q7B4 = document.createElement('button');
-    Q7B4.innerText = QuizQuestions[6].Choices.Choice_D;
-    QuestionChoices.appendChild(Q7B4);
-
-    // Creating A Event Listener And Subsequent Function When Choice A Of Question "6" Is Selected
-    Q7B1.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionEight();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice B Of Question "6" Is Selected
-    Q7B2.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionEight();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice C Of Question "6" Is Selected
-    Q7B3.addEventListener("click", function() {
-        CorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionEight();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice D Of Question "6" Is Selected
-    Q7B4.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionEight();
-    });
-}
-
-// Creating A Function Which Displays The Eighth Question In The Quiz
-function DisplayQuestionEight() {
-    // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
-    QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Eighth Question Title In The Quiz Questions Object
-    QuestionTitle.textContent = QuizQuestions[7].Question_Title;
-
-    // Creating And Appending A Button For Choice A Of Question "7" In Quiz Questions Object
-    var Q8B1 = document.createElement('button');
-    Q8B1.innerText = QuizQuestions[7].Choices.Choice_A;
-    QuestionChoices.appendChild(Q8B1);
-
-    // Creating And Appending A Button For Choice B Of Question "7" In Quiz Questions Object
-    var Q8B2 = document.createElement('button');
-    Q8B2.innerText = QuizQuestions[7].Choices.Choice_B;
-    QuestionChoices.appendChild(Q8B2);
-
-    // Creating And Appending A Button For Choice C Of Question "7" In Quiz Questions Object
-    var Q8B3 = document.createElement('button');
-    Q8B3.innerText = QuizQuestions[7].Choices.Choice_C;
-    QuestionChoices.appendChild(Q8B3);
-
-    // Creating And Appending A Button For Choice D Of Question "7" In Quiz Questions Object
-    var Q8B4 = document.createElement('button');
-    Q8B4.innerText = QuizQuestions[7].Choices.Choice_D;
-    QuestionChoices.appendChild(Q8B4);
-
-    // Creating A Event Listener And Subsequent Function When Choice A Of Question "7" Is Selected
-    Q8B1.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionNine();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice B Of Question "7" Is Selected
-    Q8B2.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionNine();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice C Of Question "7" Is Selected
-    Q8B3.addEventListener("click", function() {
-        CorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionNine();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice D Of Question "7" Is Selected
-    Q8B4.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionNine();
-    });
-}
-
-// Creating A Function Which Displays The Ninth Question In The Quiz
-function DisplayQuestionNine() {
-    // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
-    QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Ninth Question Title In The Quiz Questions Object
-    QuestionTitle.textContent = QuizQuestions[8].Question_Title;
-
-    // Creating And Appending A Button For Choice A Of Question "8" In Quiz Questions Object
-    var Q9B1 = document.createElement('button');
-    Q9B1.innerText = QuizQuestions[8].Choices.Choice_A;
-    QuestionChoices.appendChild(Q9B1);
-
-    // Creating And Appending A Button For Choice B Of Question "8" In Quiz Questions Object
-    var Q9B2 = document.createElement('button');
-    Q9B2.innerText = QuizQuestions[8].Choices.Choice_B;
-    QuestionChoices.appendChild(Q9B2);
-
-    // Creating A Event Listener And Subsequent Function When Choice A Of Question "8" Is Selected
-    Q9B1.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionTen();
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice B Of Question "8" Is Selected
-    Q9B2.addEventListener("click", function() {
-        CorrectAnswer();
-        QuestionTitle.textContent = " ";
-        DisplayQuestionTen();
-    });
-}
-
-// Creating A Function Which Displays The Tenth Question In The Quiz
-function DisplayQuestionTen() {
-    // Clears HTML Elements Within Question Choices Section Of HTML Document To Blank
-    QuestionChoices.innerHTML = "";
-    // Making The "#Question-Title" ID Have The Same Value As The Tenth Question Title In The Quiz Questions Object
-    QuestionTitle.textContent = QuizQuestions[9].Question_Title;
-
-    // Creating And Appending A Button For Choice A Of Question "9" In Quiz Questions Object
-    var Q10B1 = document.createElement('button');
-    Q10B1.innerText = QuizQuestions[9].Choices.Choice_A;
-    QuestionChoices.appendChild(Q10B1);
-
-    // Creating And Appending A Button For Choice B Of Question "9" In Quiz Questions Object
-    var Q10B2 = document.createElement('button');
-    Q10B2.innerText = QuizQuestions[9].Choices.Choice_B;
-    QuestionChoices.appendChild(Q10B2);
-
-    // Creating And Appending A Button For Choice C Of Question "9" In Quiz Questions Object
-    var Q10B3 = document.createElement('button');
-    Q10B3.innerText = QuizQuestions[9].Choices.Choice_C;
-    QuestionChoices.appendChild(Q10B3);
-
-    // Creating A Event Listener And Subsequent Function When Choice A Of Question "9" Is Selected
-    Q10B1.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice B Of Question "9" Is Selected
-    Q10B2.addEventListener("click", function() {
-        IncorrectAnswer();
-        QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
-    });
-
-    // Creating A Event Listener And Subsequent Function When Choice C Of Question "9" Is Selected
-    Q10B3.addEventListener("click", function() {
-        CorrectAnswer();
-        QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
-    });
+    
 }
 
 // Creating A Function Called StartOfQuiz (This Dictates What Happens When Start Quiz Button Is Clicked)
