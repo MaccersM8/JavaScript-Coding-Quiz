@@ -110,24 +110,21 @@ var QuizQuestions = {
         },
         Correct_Answer: "var carName;",
     },
-}
-// Declaring A Variable Which Selects The ".EndHide" ID On HTML Page
+};
+// Declaring A Variable Which Selects The ".EndHide" Class On HTML Page
 var EndScreen = document.querySelector('.endHide');
 // Declaring A Variable For The Timer Clock
 var TimerClock
 // Declaring A Variable Which Selects The "#Final-Score" ID On HTML Page
 var FinalScore = document.querySelector('#final-score');
-var TimePoints
-var QuestionFeedback = document.querySelector('#feedback');
-var Initials = document.querySelector('#initials');
-var SubmitButton = document.querySelector('#submit');
-var UserData = {
-    Initials: Initials,
-    Score: QuizScore,
-};
-
+// Declaring A Variable Which Selects The ".hideFeedback" Class On HTML Page
 var HideFeedback = document.querySelector('.hideFeedback');
+// Declaring A Variable Which Selects The "#Feedback" ID On HTML Page
 var Feedback = document.querySelector('#feedback');
+// Declaring A Variable Which Will Hold The Timer Points When The Quiz Ends
+var TimePoints = 0;
+// Declaring A Variable Which Will Hold The Final User Score When The Quiz Ends
+var FinalPoints = 0;
 
 // Creating A Function Called SetTime (This Dictates The Timer Functionality For The Quiz)
 function SetTime() {
@@ -554,14 +551,14 @@ function DisplayQuestionEight() {
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "7" Is Selected
     Q8B3.addEventListener("click", function() {
-        CorrectAnswer();
+        IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "7" Is Selected
     Q8B4.addEventListener("click", function() {
-        IncorrectAnswer();
+        CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
     });
@@ -659,14 +656,12 @@ function EndOfQuiz() {
     QuestionChoices.innerHTML = "";
     // Changing The Display Property Of The End Screen To Block
     EndScreen.style.display = 'block';
+    // Calculating The Points Scored For Time Left On The Clock
+    TimePoints = SecondsLeft * 2;
+    // Calcultating The Final Score Of The Quiz
+    FinalPoints = TimePoints + QuizScore;
     // Displaying The Quiz Score On The Web Page
-    FinalScore.textContent = QuizScore;
-    
-    SubmitButton.addEventListener("click", function(event){
-        event.preventDefault();
-    });
-    
-    localStorage.setItem("User", UserData);
+    FinalScore.textContent = FinalPoints;
 }
 
 // Creating A Function That Will Play Correct Sound Effect
@@ -709,8 +704,8 @@ function IncorrectAnswer() {
     Feedback.appendChild(IncorrectResponse);
     // Calling Incorrect Sound Function
     PlayIncorrectSound();
-    // Reducing Timer By 5 Seconds
-    SecondsLeft = SecondsLeft - 5;
+    // Reducing Timer By 10 Seconds
+    SecondsLeft = SecondsLeft - 10;
 }
 
 // Calling The StartOfQuiz Function
