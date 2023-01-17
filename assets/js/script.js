@@ -1,8 +1,3 @@
-//WHEN all questions are answered or the timer reaches 0
-//THEN the game is over
-//WHEN the game is over
-//THEN I can save my initials and score
-
 // Declaring A Variable Which Selects The "#Start" ID On HTML Page (The Start Quiz Button)
 var StartQuiz = document.getElementById("start");
 // Declaring A Variable Which Selects The "#Time" ID On HTML Page (The Timer Counter)
@@ -116,11 +111,28 @@ var QuizQuestions = {
         Correct_Answer: "var carName;",
     },
 }
+// Declaring A Variable Which Selects The ".EndHide" ID On HTML Page
+var EndScreen = document.querySelector('.endHide');
+// Declaring A Variable For The Timer Clock
+var TimerClock
+// Declaring A Variable Which Selects The "#Final-Score" ID On HTML Page
+var FinalScore = document.querySelector('#final-score');
+var TimePoints
+var QuestionFeedback = document.querySelector('#feedback');
+var Initials = document.querySelector('#initials');
+var SubmitButton = document.querySelector('#submit');
+var UserData = {
+    Initials: Initials,
+    Score: QuizScore,
+};
+
+var HideFeedback = document.querySelector('.hideFeedback');
+var Feedback = document.querySelector('#feedback');
 
 // Creating A Function Called SetTime (This Dictates The Timer Functionality For The Quiz)
 function SetTime() {
     // Creating A Function Within A Variable (This Dictates The Interval For The Timer Functionality For The Quiz)
-    var TimerInterval = setInterval(function () {
+    TimerClock = setInterval(function () {
         // Indicates That The Value Of The SecondsLeft Variable Should Decrease When Function Is Called
         SecondsLeft--;
         // Tells Program To Display The Value Of The SecondsLeft Variable On Web Page
@@ -131,9 +143,8 @@ function SetTime() {
     }, 1000);
 
     // IF The Value Of The SecondsLeft Variable Is Equal To Zero ....
-    if (SecondsLeft === 0) {
-        // Stop The Timer Functionality Of The Quiz
-        clearInterval(TimerInterval);
+    if (SecondsLeft == 0) {
+        EndOfQuiz();
     }
     // Removing The Content Shown With The "#StartScreen" ID On HTML Page
     StartScreen.style.display = 'none';
@@ -614,21 +625,21 @@ function DisplayQuestionTen() {
     Q10B1.addEventListener("click", function() {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
+        EndOfQuiz();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "9" Is Selected
     Q10B2.addEventListener("click", function() {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
+        EndOfQuiz();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "9" Is Selected
     Q10B3.addEventListener("click", function() {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
-        // INSERT END GAME FUNCTION
+        EndOfQuiz();
     });
 }
 
@@ -636,33 +647,68 @@ function DisplayQuestionTen() {
 function StartOfQuiz() {
     // Creating A EventListener That Happens When The Start Button Is Clicked On Web Page
     StartQuiz.addEventListener('click', SetTime);
+    HideFeedback.style.display = 'block';
     DisplayQuestionOne();
 }
 
+// Creating A Function Called EndOfQuiz (This Dictates What Happens When The Quiz Is Finished)
+function EndOfQuiz() {
+    // Stopping The Timer Shown On The Web Page
+    clearInterval(TimerClock);
+    // Clearing The HTML Elements Of The Question Choices Section
+    QuestionChoices.innerHTML = "";
+    // Changing The Display Property Of The End Screen To Block
+    EndScreen.style.display = 'block';
+    // Displaying The Quiz Score On The Web Page
+    FinalScore.textContent = QuizScore;
+    
+    SubmitButton.addEventListener("click", function(event){
+        event.preventDefault();
+    });
+    
+    localStorage.setItem("User", UserData);
+}
+
+// Creating A Function That Will Play Correct Sound Effect
+function PlayCorrectSound(){
+    var correctaudio = new Audio('assets/sfx/correct.wav');
+    correctaudio.play();
+};
+
 // Creating A Function Called Correct Answer (This Will Apply When Correct Choice Is Selected)
 function CorrectAnswer() {
-    // Clearing Question Choices HTML Elements
-    QuestionChoices.innerHTML = "";
+    // Clearing Text Content Of Feedback Section
+    Feedback.textContent = "";
     // Creating A New P Element In HTML Document
     var CorrectResponse = document.createElement('p');
     // Giving New P Element Some Content
-    CorrectResponse.textContent = "Correct!";
-    // Appending New P Element To Bottom Of Question Choices Section
-    QuestionChoices.appendChild(CorrectResponse);
+    CorrectResponse.textContent = "Correct! 3 Points Added To Your Score!!";
+    // Appending New P Element To Bottom Of Feedback Section
+    Feedback.appendChild(CorrectResponse);
+    // Calling Correct Sound Function
+    PlayCorrectSound();
     // Adding A Value Of Three To To Quiz Score
     QuizScore = QuizScore + 3;
 }
 
+// Creating A Function That Will Play Incorrect Sound Effect
+function PlayIncorrectSound(){
+    var incorrectaudio = new Audio('assets/sfx/incorrect.wav');
+    incorrectaudio.play();
+}
+
 // Creating A Function Called Incorrect Answer (This Will Apply When Incorrect Choice Is Selected)
 function IncorrectAnswer() {
-    // Clearing Question Choices HTML Elements
-    QuestionChoices.innerHTML = "";
+    // Clearing Text Conent Of Feedback Section
+    Feedback.textContent = "";
     // Creating A New P Element In HTML Document
     var IncorrectResponse = document.createElement('p');
     // Giving New P Element Some Content
-    IncorrectResponse.textContent = "Oops! Incorrect";
-    // Appending New P Element To Bottom Of Question Choices Section
-    QuestionChoices.appendChild(IncorrectResponse);
+    IncorrectResponse.textContent = "Oops! Incorrect! 5 Seconds Removed Off Your Time!!";
+    // Appending New P Element To Bottom Of Feedback Section
+    Feedback.appendChild(IncorrectResponse);
+    // Calling Incorrect Sound Function
+    PlayIncorrectSound();
     // Reducing Timer By 5 Seconds
     SecondsLeft = SecondsLeft - 5;
 }
