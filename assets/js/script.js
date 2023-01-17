@@ -648,6 +648,9 @@ function StartOfQuiz() {
     DisplayQuestionOne();
 }
 
+// Declaring A Blank Array For The User Scores To Be Stored Via Local Storage
+var StoredScores = [];
+
 // Creating A Function Called EndOfQuiz (This Dictates What Happens When The Quiz Is Finished)
 function EndOfQuiz() {
     // Declaring A Variable Which Will Hold The Timer Points When The Quiz Ends
@@ -666,8 +669,6 @@ function EndOfQuiz() {
     FinalPoints = TimePoints + QuizScore;
     // Displaying The Quiz Score On The Web Page
     FinalScore.textContent = FinalPoints;
-    // Declaring A Blank Array For The User Scores To Be Stored Via Local Storage
-    var StoredScores = [];
     // Creating A Function When Submit Button Is Clicked
     ScoreSubmitButton.addEventListener("click", function (event) {
         // Stops The Default Action Of Clicking The Submit Button
@@ -679,12 +680,13 @@ function EndOfQuiz() {
             PlayerID: UserID,
             PlayerScore: FinalPoints,
         };
-        // Declaring A Variable For The Stored Data
-        var StoredData = PlayerDetails;
+        
         // Pushing The Stored Data Variable Into The Stored Scores Array
-        StoredScores.push(StoredData);
+        StoredScores.push(PlayerDetails);
         // Saving Stored Scores To Local Storage
         localStorage.setItem('GamePerformance', JSON.stringify(StoredScores));
+
+        location.href = "highscores.html";
     });
 }
 
@@ -723,7 +725,7 @@ function IncorrectAnswer() {
     // Creating A New P Element In HTML Document
     var IncorrectResponse = document.createElement('p');
     // Giving New P Element Some Content
-    IncorrectResponse.textContent = "Oops! Incorrect! 5 Seconds Removed Off Your Time!!";
+    IncorrectResponse.textContent = "Oops! Incorrect! 10 Seconds Removed Off Your Time!!";
     // Appending New P Element To Bottom Of Feedback Section
     Feedback.appendChild(IncorrectResponse);
     // Calling Incorrect Sound Function
