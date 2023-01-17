@@ -121,10 +121,10 @@ var FinalScore = document.querySelector('#final-score');
 var HideFeedback = document.querySelector('.hideFeedback');
 // Declaring A Variable Which Selects The "#Feedback" ID On HTML Page
 var Feedback = document.querySelector('#feedback');
-// Declaring A Variable Which Will Hold The Timer Points When The Quiz Ends
-var TimePoints = 0;
-// Declaring A Variable Which Will Hold The Final User Score When The Quiz Ends
-var FinalPoints = 0;
+// Declaring A Variable Which Selects The "#Submit" ID On HTML Page
+var ScoreSubmitButton = document.querySelector('#submit');
+// Declaring A Blank Array For Player Details To Be Eventually Stored
+var PlayerDetails = {};
 
 // Creating A Function Called SetTime (This Dictates The Timer Functionality For The Quiz)
 function SetTime() {
@@ -176,28 +176,28 @@ function DisplayQuestionOne() {
     QuestionChoices.appendChild(Q1B4);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "0" Is Selected
-    Q1B1.addEventListener("click", function() {
+    Q1B1.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "0" Is Selected
-    Q1B2.addEventListener("click", function() {
+    Q1B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "0" Is Selected
-    Q1B3.addEventListener("click", function() {
+    Q1B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTwo();
     })
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "0" Is Selected
-    Q1B4.addEventListener("click", function() {
+    Q1B4.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTwo();
@@ -228,23 +228,23 @@ function DisplayQuestionTwo() {
 
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "1" Is Selected
-    Q2B1.addEventListener("click", function() {
+    Q2B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionThree();
-        
+
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "1" Is Selected
-    Q2B2.addEventListener("click", function() {
+    Q2B2.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionThree();
-        
+
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "1" Is Selected
-    Q2B3.addEventListener("click", function() {
+    Q2B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionThree();
@@ -275,21 +275,21 @@ function DisplayQuestionThree() {
     QuestionChoices.appendChild(Q3B3);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "2" Is Selected
-    Q3B1.addEventListener("click", function() {
+    Q3B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFour();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "2" Is Selected
-    Q3B2.addEventListener("click", function() {
+    Q3B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFour();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "2" Is Selected
-    Q3B3.addEventListener("click", function() {
+    Q3B3.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFour();
@@ -324,28 +324,28 @@ function DisplayQuestionFour() {
     QuestionChoices.appendChild(Q4B4);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "3" Is Selected
-    Q4B1.addEventListener("click", function() {
+    Q4B1.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "3" Is Selected
-    Q4B2.addEventListener("click", function() {
+    Q4B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "3" Is Selected
-    Q4B3.addEventListener("click", function() {
+    Q4B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFive();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "3" Is Selected
-    Q4B4.addEventListener("click", function() {
+    Q4B4.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionFive();
@@ -380,28 +380,28 @@ function DisplayQuestionFive() {
     QuestionChoices.appendChild(Q5B4);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "4" Is Selected
-    Q5B1.addEventListener("click", function() {
+    Q5B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "4" Is Selected
-    Q5B2.addEventListener("click", function() {
+    Q5B2.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "4" Is Selected
-    Q5B3.addEventListener("click", function() {
+    Q5B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSix();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "4" Is Selected
-    Q5B4.addEventListener("click", function() {
+    Q5B4.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSix();
@@ -431,21 +431,21 @@ function DisplayQuestionSix() {
     QuestionChoices.appendChild(Q6B3);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "5" Is Selected
-    Q6B1.addEventListener("click", function() {
+    Q6B1.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSeven();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "5" Is Selected
-    Q6B2.addEventListener("click", function() {
+    Q6B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSeven();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "5" Is Selected
-    Q6B3.addEventListener("click", function() {
+    Q6B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionSeven();
@@ -480,28 +480,28 @@ function DisplayQuestionSeven() {
     QuestionChoices.appendChild(Q7B4);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "6" Is Selected
-    Q7B1.addEventListener("click", function() {
+    Q7B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionEight();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "6" Is Selected
-    Q7B2.addEventListener("click", function() {
+    Q7B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionEight();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "6" Is Selected
-    Q7B3.addEventListener("click", function() {
+    Q7B3.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionEight();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "6" Is Selected
-    Q7B4.addEventListener("click", function() {
+    Q7B4.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionEight();
@@ -536,28 +536,28 @@ function DisplayQuestionEight() {
     QuestionChoices.appendChild(Q8B4);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "7" Is Selected
-    Q8B1.addEventListener("click", function() {
+    Q8B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "7" Is Selected
-    Q8B2.addEventListener("click", function() {
+    Q8B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "7" Is Selected
-    Q8B3.addEventListener("click", function() {
+    Q8B3.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice D Of Question "7" Is Selected
-    Q8B4.addEventListener("click", function() {
+    Q8B4.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionNine();
@@ -582,14 +582,14 @@ function DisplayQuestionNine() {
     QuestionChoices.appendChild(Q9B2);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "8" Is Selected
-    Q9B1.addEventListener("click", function() {
+    Q9B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTen();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "8" Is Selected
-    Q9B2.addEventListener("click", function() {
+    Q9B2.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         DisplayQuestionTen();
@@ -619,21 +619,21 @@ function DisplayQuestionTen() {
     QuestionChoices.appendChild(Q10B3);
 
     // Creating A Event Listener And Subsequent Function When Choice A Of Question "9" Is Selected
-    Q10B1.addEventListener("click", function() {
+    Q10B1.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         EndOfQuiz();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice B Of Question "9" Is Selected
-    Q10B2.addEventListener("click", function() {
+    Q10B2.addEventListener("click", function () {
         IncorrectAnswer();
         QuestionTitle.textContent = " ";
         EndOfQuiz();
     });
 
     // Creating A Event Listener And Subsequent Function When Choice C Of Question "9" Is Selected
-    Q10B3.addEventListener("click", function() {
+    Q10B3.addEventListener("click", function () {
         CorrectAnswer();
         QuestionTitle.textContent = " ";
         EndOfQuiz();
@@ -650,6 +650,10 @@ function StartOfQuiz() {
 
 // Creating A Function Called EndOfQuiz (This Dictates What Happens When The Quiz Is Finished)
 function EndOfQuiz() {
+    // Declaring A Variable Which Will Hold The Timer Points When The Quiz Ends
+    var TimePoints = 0;
+    // Declaring A Variable Which Will Hold The Final User Score When The Quiz Ends
+    var FinalPoints
     // Stopping The Timer Shown On The Web Page
     clearInterval(TimerClock);
     // Clearing The HTML Elements Of The Question Choices Section
@@ -662,10 +666,30 @@ function EndOfQuiz() {
     FinalPoints = TimePoints + QuizScore;
     // Displaying The Quiz Score On The Web Page
     FinalScore.textContent = FinalPoints;
+    // Declaring A Blank Array For The User Scores To Be Stored Via Local Storage
+    var StoredScores = [];
+    // Creating A Function When Submit Button Is Clicked
+    ScoreSubmitButton.addEventListener("click", function (event) {
+        // Stops The Default Action Of Clicking The Submit Button
+        event.preventDefault();
+        // Declaring A Varibale Which Selects The Value Of The UserInput
+        var UserID = document.getElementById("UserInput").value;
+        // Giving The Player Details Array Some Values
+        PlayerDetails = {
+            PlayerID: UserID,
+            PlayerScore: FinalPoints,
+        };
+        // Declaring A Variable For The Stored Data
+        var StoredData = PlayerDetails;
+        // Pushing The Stored Data Variable Into The Stored Scores Array
+        StoredScores.push(StoredData);
+        // Saving Stored Scores To Local Storage
+        localStorage.setItem('GamePerformance', JSON.stringify(StoredScores));
+    });
 }
 
 // Creating A Function That Will Play Correct Sound Effect
-function PlayCorrectSound(){
+function PlayCorrectSound() {
     var correctaudio = new Audio('assets/sfx/correct.wav');
     correctaudio.play();
 };
@@ -687,7 +711,7 @@ function CorrectAnswer() {
 }
 
 // Creating A Function That Will Play Incorrect Sound Effect
-function PlayIncorrectSound(){
+function PlayIncorrectSound() {
     var incorrectaudio = new Audio('assets/sfx/incorrect.wav');
     incorrectaudio.play();
 }
